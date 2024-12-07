@@ -1,0 +1,18 @@
+// Add border properties so that TailwindCSS's border utility classes function as expected.
+*,
+*::before,
+*::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme("colors.gray.200");
+}
+
+body {
+  font-family: system-ui;
+}
+
+button {
+  background-color: theme("colors.gray.100");
+  border-radius: theme("borderRadius.DEFAULT");
+  cursor: pointer;
+}

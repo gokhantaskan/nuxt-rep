@@ -1,0 +1,13 @@
+{
+  "language": "Dil",
+  "seo": {
+    "description": "Uygulama açıklaması",
+    "ogDescription": "Uygulama açıklaması",
+    "ogTitle": "Uygulama başlığı",
+    "twitterDescription": "Uygulama açıklaması",
+    "twitterTitle": "Uygulama başlığı"
+  },
+  "titles": {
+    "home": "Anasayfa"
+  }
+}

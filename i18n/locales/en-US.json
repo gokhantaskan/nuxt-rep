@@ -1,0 +1,13 @@
+{
+  "language": "Language",
+  "seo": {
+    "description": "App description",
+    "ogDescription": "App description",
+    "ogTitle": "App title",
+    "twitterDescription": "App description",
+    "twitterTitle": "App title"
+  },
+  "titles": {
+    "home": "Home"
+  }
+}

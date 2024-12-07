@@ -1,0 +1,40 @@
+name: Database Operations
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  db-operations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install pnpm
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check migrations folder
+        id: check_migrations
+        run: |
+          if [ -n "$(ls -A prisma/migrations 2>/dev/null)" ]; then
+            echo "has_migrations=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_migrations=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Migrate database
+        if: steps.check_migrations.outputs.has_migrations == 'true'
+        run: pnpm db:migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

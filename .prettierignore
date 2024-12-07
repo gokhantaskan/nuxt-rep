@@ -1,0 +1,11 @@
+**/node_modules/
+**/dist/
+**/migrations/
+**/.vscode/
+**/.nuxt/
+**/.output/
+
+**/*.pem
+
+**/package.json
+**/pnpm-lock.yaml
